@@ -633,6 +633,7 @@ impl ModelRoutingConfigTool {
                 model: model.clone(),
                 system_prompt: None,
                 api_key: None,
+                api_url: None,
                 temperature: None,
                 max_depth: DEFAULT_AGENT_MAX_DEPTH,
                 agentic: false,

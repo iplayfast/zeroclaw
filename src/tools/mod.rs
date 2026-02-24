@@ -303,10 +303,13 @@ pub fn all_tools_with_runtime(
             let trimmed_value = value.trim();
             (!trimmed_value.is_empty()).then(|| trimmed_value.to_owned())
         });
+        // Get global api_url for delegate tool fallback
+        let delegate_fallback_api_url = root_config.api_url.clone();
         let parent_tools = Arc::new(tool_arcs.clone());
         let delegate_tool = DelegateTool::new_with_options(
             delegate_agents,
             delegate_fallback_credential,
+            delegate_fallback_api_url,
             security.clone(),
             crate::providers::ProviderRuntimeOptions {
                 auth_profile_override: None,

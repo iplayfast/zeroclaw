@@ -225,6 +225,9 @@ pub struct DelegateAgentConfig {
     /// Optional API key override
     #[serde(default)]
     pub api_key: Option<String>,
+    /// Optional API URL override (e.g. for remote Ollama server)
+    #[serde(default)]
+    pub api_url: Option<String>,
     /// Temperature override
     #[serde(default)]
     pub temperature: Option<f64>,
